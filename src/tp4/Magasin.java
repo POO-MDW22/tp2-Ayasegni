@@ -1,35 +1,24 @@
-public class Magasin {
-    public int id;
-    public String adresse;
-    public int capacite = 50;
-    produit[] tab = new produit[capacite];
-    public int num = 0;
+import javax.xml.crypto.Data;
+public class magasin {
+    String adress;
+    int id;
+    int Capasitee;
+    produit[] products;
+    magasin(String adress,int id,int capasitee,produit[] p){
+        this.adress=adress;
+        this.id=id;
+        this.Capasitee=capasitee;
 
-    public Magasin(int id, String adresse, int capacite) {
-        this.id = id;
-        this.adresse = adresse;
-        this.capacite = capacite;
+        this.products=p;
     }
-
-    public Magasin() {
-    }
-
-    public void affmagasin() {
-        System.out.println(this.id);
-        System.out.println(this.adresse);
-        System.out.println(this.capacite);
-        for (int i = 0; i < num; i++) {
-            System.out.println(tab[i].getLibelle());
-            System.out.println(tab[i].getPrix());
-        }
-    }
-
-    public void ajouter(produit p) {
-        if (num < capacite) {
-            tab[num] = p;
-            num++;
-        } else {
-            System.out.println("La quantité a dépassé la quantité maximale de produits.");
+    void Affichermagasin(){
+        System.out.println("id of the Market: "+id + " located in "+adress +" that supports "+Capasitee+" product");
+        for (int i=0;i<products.length;i++){
+            if (products[i] != null) {
+                products[i].afficherProduit();
+            }
         }
     }
 }
+    
+
